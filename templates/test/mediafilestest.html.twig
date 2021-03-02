@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Media files_</h1>
+    {% if files is not empty %}
+        <p>files:</p>
+        <ul>
+            {% for file in files %}
+                <li>
+                    <img src="/{{ file.path|replace({'\\': "/"}) }}" alt="{{ file.altText }}"><br/>
+                    <h2>{{ file.title }}</h2>
+                    <h6>{{ file.name }}</h6>
+                    <p>/{{ file.path|replace({'\\': "/"}) }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>no files</p>
+    {% endif %}
+{% endblock %}
