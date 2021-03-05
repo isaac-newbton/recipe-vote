@@ -1,10 +1,66 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <main>
-        <h2>Enter recipe form</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis magni consequatur voluptatibus veritatis culpa amet dolor quod minima itaque inventore!</p>
-        <p>[form]</p>
-        <a href="{{ path('recipe') }}">View recipe</a>
+    <main id="enter_recipe">
+        <header class="full">
+            <img src="/images/header.png" alt="Cheesesteak Day banner">
+            <img src="/images/plate.png" alt="Steak-umm boxes and a cheesesteak">
+        </header>
+        {{ form(form) }}
+        <footer id="footer">
+            <img src="/images/logo.png" alt="Steak-umm logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.steakumm.com/contact/" target="_blank">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">Supported Charities</a>
+                    </li>
+                    <li>
+                        <a href="https://www.steakumm.com/privacy-policy/" target="_blank">Privacy Policy</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social">
+                <div>
+                    <a href="https://twitter.com/steak_umm" target="_blank">
+                        <img src="/images/tw.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.tiktok.com/@steakumm" target="_blank">
+                        <img src="/images/tt.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/steak_umm/" target="_blank">
+                        <img src="/images/ig.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/channel/UCVWVJqzXGi5BzQ5xXn5Ln-g" target="_blank">
+                        <img src="/images/yt.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/SteakUmmMeats/" target="_blank">
+                        <img src="/images/fb.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
     </main>
+    <script>
+        function readImageUrl(input) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('recipe_image_preview').src = e.target.result
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        document.getElementById('recipe_mainImage').addEventListener('change', function(e){
+            readImageUrl(document.getElementById('recipe_mainImage'));
+        })
+    </script>
 {% endblock %}

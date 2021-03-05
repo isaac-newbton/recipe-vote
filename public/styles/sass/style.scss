@@ -1,0 +1,349 @@
+$btn_color: #fd0d08;
+$btn_color_alt: black;
+$heading_color: black;
+$heading_color_alt: #310504;
+$link_color: #fd0d08;
+$content_width: 480px;
+$content_area_background: white;
+$content_area_padding: 2.2rem;
+$viewport_background: #f3f3f3;
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: 1.1rem;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: $viewport_background;
+}
+
+main {
+    width: 100%;
+    max-width: $content_width;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+    padding-left: $content_area_padding;
+    padding-right: $content_area_padding;
+    box-sizing: border-box;
+    padding-bottom: $content_area_padding;
+    min-height: 100vh;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.7rem;
+}
+
+h2 {
+    font-size: 2.1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+#contest_steps{
+
+    h2{
+        color: $heading_color_alt;
+        margin: 0;
+        text-transform: unset;
+    }
+
+    p{
+        margin-top: 0.13em;
+    }
+}
+
+#prizes {
+    text-align:center;
+    background-color: $btn_color;
+    padding: $content_area_padding;
+    margin-left: -$content_area_padding;
+    margin-right: -$content_area_padding;
+    margin-bottom: -$content_area_padding;
+
+    h2{
+        margin-bottom: 0;
+    }
+
+    p{
+        margin-top: 0.13em;
+        font-weight: bold;
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+    }
+}
+
+a{
+    color: $link_color;
+}
+
+a.button, button, submit {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    display: block;
+    padding: 0.4em 2em;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: $btn_color;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: center;
+    width: fit-content;
+    max-width: $content_width;
+    margin-bottom: 0.5em;
+
+    &.alt {
+        background-color: $btn_color_alt;
+    }
+}
+
+.label_hidden {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    color: transparent;
+    background: transparent;
+    opacity: 0;
+    left: -9999px;
+    top: 0;
+}
+
+#buttons_rules{
+    background-color: $btn_color;
+    text-align: center;
+    margin-left: -$content_area_padding;
+    margin-right: -$content_area_padding;
+    margin-bottom: -$content_area_padding;
+    padding: $content_area_padding $content_area_padding 0;
+
+    small a, small{
+        color: lightgray;
+        font-weight: bold;
+    }
+
+    footer {
+        margin-left: -$content_area_padding;
+        margin-right: -$content_area_padding;
+        margin-top: $content_area_padding;
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: fit-content;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+}
+
+#page_home {
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+}
+
+#recipe_description {
+    color: #636466;
+
+    ul {
+        list-style: initial;
+        padding: revert;
+    }
+}
+
+.recipe_admin {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    p {
+        margin-top: 0;
+        text-align:center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+#view_recipe {
+
+    article {
+        header {
+            padding-top: $content_area_padding;
+
+            img {
+                border-radius: 20px;
+            }
+
+            h1 {
+                margin-top: $content_area_padding;
+                text-align: center;
+                color: $heading_color_alt;
+            }
+        }
+    }
+}
+
+#vote_form_section {
+    margin-top: $content_area_padding;
+
+    h2 {
+        font-size: 1.33rem;
+        color: $heading_color_alt;
+        text-align: center;
+    }
+}
+
+input[type="text"], input[type="email"] {
+    display: block;
+    width: 100%;
+    border: 3px solid #b9b7b5;
+    border-radius: 6px;
+    line-height: 250%;
+    padding: 0.25em;
+    box-sizing: border-box;
+}
+
+.input_container {
+    margin: 0 0 0.5rem;
+}
+
+input[type="checkbox"] + .help-text {
+    display: inline-block;
+    font-size: 0.67rem;
+    margin-left: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0.38rem;
+}
+
+submit, button[type="submit"] {
+    margin-top: 1rem;
+}
+
+.label_file {
+    display: block;
+    width: 100%;
+    line-height: 400%;
+    text-align:center;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 3px solid #b9b7b5;
+    color: #b9b7b5;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+input[type="file"]{
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+}
+
+header.full {
+    margin-left: -$content_area_padding;
+    margin-right: -$content_area_padding;
+}
+
+#footer {
+    background-image: url(/images/footer.png);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    .logo {
+        position: relative;
+        top: -20px;
+    }
+
+    nav {
+
+        ul{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        li {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.33rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Oswald', Arial, Helvetica, sans-serif;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        padding: $content_area_padding;
+
+        >div {
+            text-align: center;
+            font-size: 0;
+            flex: 1 1 20%;
+
+            img {
+                display: inline-block;
+                width: auto;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+#view_recipe, #enter_recipe, #page_rules {
+    
+
+    #footer {
+        background-color: $btn_color;
+        margin-top: 60px;
+        margin-left: -$content_area_padding;
+        margin-right: -$content_area_padding;
+        margin-bottom: -$content_area_padding;
+    }
+}

@@ -19,6 +19,18 @@ class RecipeVoteRepository extends ServiceEntityRepository
         parent::__construct($registry, RecipeVote::class);
     }
 
+    public function findByEmailToday(string $email){
+        $today = date('Y-m-d 00:00:00');
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.voterEmail = :email')
+            ->setParameter('email', $email)
+            ->andWhere('r.createdDateTime > :dt')
+            ->setParameter('dt', $today)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return RecipeVote[] Returns an array of RecipeVote objects
     //  */

@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <main id="admin_recipes">
+        <header>
+            <h1>{{ recipes|length }} Recipe(s) found in "{{ filter }}"</h1>
+            <p>
+                <a href="{{ path('admin_recipes', {filter: 'pending'}) }}">See all PENDING</a>
+                <a href="{{ path('admin_recipes', {filter: 'published'}) }}">See all PUBLISHED</a>
+                <a href="{{ path('admin_recipes', {filter: 'denied'}) }}">See all DENIED</a>
+            </p>
+        </header>
+        {% if recipes|length > 0 %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Votes</th>
+                        <th>Recipe</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in recipes %}
+                        <tr>
+                            <td>
+                                {{ r.recipeVotes|length }}
+                            </td>
+                            <td>
+                                <b>{{ r.title }}</b><br/>
+                                <small>{{ r.createdDateTime|date('m/d g:i:sA') }}</small>
+                            </td>
+                            <td>
+                                <a href="{{ path('admin_preview_recipe', {uuid: r.uuid}) }}">Preview (Admin)</a><br/>
+                                <a href="{{ path('recipe_view', {uuid: r.uuid}) }}">View (Public page)</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </main>
+{% endblock %}

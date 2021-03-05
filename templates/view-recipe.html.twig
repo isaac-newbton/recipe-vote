@@ -1,10 +1,102 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <main>
-        <h2>Recipe title</h2>
-        [image]
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti mollitia error ea illum non labore corporis optio fugiat illo aliquid necessitatibus molestiae quo rerum voluptas odio, quos et temporibus ipsa ut? Blanditiis, numquam debitis nobis sint ex nisi corporis magni.</p>
-        [vote]
+    <main id="view_recipe">
+        <header class="full">
+            <img src="/images/header.png" alt="Cheesesteak Day banner">
+        </header>
+        {% if voted %}
+            {% if allowed %}
+                <div class="voted_thankyou">
+                    <h2>Your vote has been recorded.</h2>
+                    <p>Thank you for voting.</p>
+                    <p><a href="{{ path('index') }}">Return to contest home page</a></p>
+                </div>
+            {% else %}
+                <div class="vote_rejected">
+                    <p>A vote from this email has already been recorded today.</p>
+                </div>
+            {% endif %}
+        {% endif %}
+        {% if recipe.published %}
+            <article>
+                <header>
+                    <img src="/{{ recipe.mainImage.path|replace({'\\': "/"}) }}" alt="{{ recipe.mainImage.altText }}">
+                    <h1>{{ recipe.title }}</h1>
+                </header>
+                <section id="recipe_description">
+                    {{ recipe.description|raw }}
+                </section>
+            </article>
+            {% if voted %}
+                {% if allowed %}
+                    <div class="voted_thankyou">
+                        <h2>Your vote has been recorded.</h2>
+                        <p>Thank you for voting.</p>
+                        <p><a href="{{ path('index') }}">Return to contest home page</a></p>
+                    </div>
+                {% else %}
+                    <div class="vote_rejected">
+                        <p>A vote from this email has already been recorded today.</p>
+                    </div>
+                {% endif %}
+            {% else %}
+                <section id="vote_form_section">
+                    <h2>Only one vote per day is accepted.</h2>
+                    {{ form(form) }}
+                </section>
+            {% endif %}
+        {% elseif recipe.published is null %}
+            <div id="recipe_not_published">
+                <p>That recipe is still pending approval. Please check back later. <a href="{{ path('index') }}">Return to contest home page</a></p>
+            </div>
+        {% else %}
+            <div id="recipe_does_not_exist">
+                <p>That recipe does not exist. <a href="{{ path('index') }}">Return to contest home page</a></p>
+            </div>
+        {% endif %}
+        <footer id="footer">
+            <img src="/images/logo.png" alt="Steak-umm logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.steakumm.com/contact/" target="_blank">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">Supported Charities</a>
+                    </li>
+                    <li>
+                        <a href="https://www.steakumm.com/privacy-policy/" target="_blank">Privacy Policy</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social">
+                <div>
+                    <a href="https://twitter.com/steak_umm" target="_blank">
+                        <img src="/images/tw.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.tiktok.com/@steakumm" target="_blank">
+                        <img src="/images/tt.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/steak_umm/" target="_blank">
+                        <img src="/images/ig.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/channel/UCVWVJqzXGi5BzQ5xXn5Ln-g" target="_blank">
+                        <img src="/images/yt.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/SteakUmmMeats/" target="_blank">
+                        <img src="/images/fb.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
     </main>
 {% endblock %}

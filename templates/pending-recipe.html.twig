@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <main id="page_pending">
+        <header>
+            <h1>Your recipe has been uploaded!</h1>
+        </header>
+        <p>
+            Your recipe, "{{ recipe.title }}", is pending approval, and will be available at the following link shortly:<br/>
+            <a href="{{ url('recipe_view', {uuid: recipe.uuid}) }}" target="_blank">{{ url('recipe_view', {uuid: recipe.uuid}) }}</a><br/>
+            Please bookmark the link and check back later. Once the recipe is published, share the link to win votes.
+        </p>
+    </main>
+{% endblock %}

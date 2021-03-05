@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <main id="view_recipe">
+        {% if recipe.published is null %}
+            <div class="recipe_admin">
+                <p>This recipe is not yet published.</p>
+                <a href="{{ path('admin_approve_recipe', {uuid: recipe.uuid}) }}" class="button alt">Approve</a>
+                <a href="{{ path('admin_deny_recipe', {uuid: recipe.uuid}) }}" class="button">Deny</a>
+            </div>
+        {% endif %}
+        <article>
+            <header>
+                <img src="/{{ recipe.mainImage.path|replace({'\\': "/"}) }}" alt="{{ recipe.mainImage.altText }}">
+                <h1>{{ recipe.title }}</h1>
+            </header>
+            <section id="recipe_description">
+                {{ recipe.description|raw }}
+            </section>
+        </article>
+        {% if recipe.published is null %}
+            <div class="recipe_admin">
+                <p>This recipe is not yet published.</p>
+                <a href="{{ path('admin_approve_recipe', {uuid: recipe.uuid}) }}" class="button alt">Approve</a>
+                <a href="{{ path('admin_deny_recipe', {uuid: recipe.uuid}) }}" class="button">Deny</a>
+            </div>
+        {% endif %}
+    </main>
+{% endblock %}

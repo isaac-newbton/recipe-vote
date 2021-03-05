@@ -36,6 +36,11 @@ class RecipeVote
      */
     private $recipe;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $voterName;
+
     public function __construct() {
         $this->uuid = Uuid::uuid4();
         $this->createdDateTime = new \DateTime();
@@ -79,6 +84,18 @@ class RecipeVote
     public function setRecipe(?Recipe $recipe): self
     {
         $this->recipe = $recipe;
+
+        return $this;
+    }
+
+    public function getVoterName(): ?string
+    {
+        return $this->voterName;
+    }
+
+    public function setVoterName(string $voterName): self
+    {
+        $this->voterName = $voterName;
 
         return $this;
     }

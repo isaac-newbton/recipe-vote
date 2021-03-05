@@ -62,6 +62,11 @@ class Recipe
      */
     private $published;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $entryName;
+
     public function __construct()
     {
         $this->galleryImages = new ArrayCollection();
@@ -198,6 +203,18 @@ class Recipe
     public function setPublished(?bool $published): self
     {
         $this->published = $published;
+
+        return $this;
+    }
+
+    public function getEntryName(): ?string
+    {
+        return $this->entryName;
+    }
+
+    public function setEntryName(string $entryName): self
+    {
+        $this->entryName = $entryName;
 
         return $this;
     }
