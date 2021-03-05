@@ -48,7 +48,7 @@
         </section>
         <section id="buttons_rules">
             <a href="{{ path('enter') }}" class="button alt">Click to submit your recipe</a>
-            <small><a href="{{ path('rules') }}">Official Rules</a> and <a href="https://www.steakumm.com/privacy-policy/" target="_blank">Privacy Policy</a></small>
+            <small><a href="{{ path('rules') }}">Official Rules</a> and <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a></small>
             <footer id="footer">
                 <img src="/images/logo.png" alt="Steak-umm logo" class="logo">
                 <nav>
@@ -57,10 +57,10 @@
                             <a href="https://www.steakumm.com/contact/" target="_blank">Contact</a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">Supported Charities</a>
+                            <a href="https://www.steakumm.com/about/#community" target="_blank">Supported Charities</a>
                         </li>
                         <li>
-                            <a href="https://www.steakumm.com/privacy-policy/" target="_blank">Privacy Policy</a>
+                            <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a>
                         </li>
                     </ul>
                 </nav>

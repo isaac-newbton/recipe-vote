@@ -115,7 +115,7 @@ class RecipeType extends AbstractType
                 'required'=>true
             ])
             ->add('entryOptIn', CheckboxType::class, [
-                'help'=>'<b>Yes!</b>I\'d like to receive emails from Steak-Umm.',
+                'help'=>'<b>Yes!</b>I\'d like to receive emails from Steak-umm.',
                 'help_html'=>true,
                 'label'=>'Opt-in to the Steak-umm email list',
                 'label_attr'=>[
