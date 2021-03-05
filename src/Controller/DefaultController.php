@@ -28,7 +28,7 @@ class DefaultController extends AbstractController {
     }
 
     /**
-     * @Route("/enter", name="enter")
+     * @Route("/recipe", name="enter")
      */
     public function enter(Request $request, SluggerInterface $slugger) : Response {
         $recipe = new Recipe();

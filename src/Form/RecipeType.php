@@ -115,7 +115,7 @@ class RecipeType extends AbstractType
                 'required'=>true
             ])
             ->add('entryOptIn', CheckboxType::class, [
-                'help'=>'<b>Yes!</b>I\'d like to receive emails from Steak-umm.',
+                'help'=>'<b>Yes!</b> I\'d like to receive emails from Steak-umm.',
                 'help_html'=>true,
                 'label'=>'Opt-in to the Steak-umm email list',
                 'label_attr'=>[
@@ -127,7 +127,7 @@ class RecipeType extends AbstractType
                 'required'=>false
             ])
             ->add('voterAcceptRules', CheckboxType::class, [
-                'help'=>'I understand and agree to these <a href="/rules" target="_blank">Official Rules</a> and <a href="https://www.steakumm.com/privacy-policy/" target="_blank">Privacy Policy</a>.',
+                'help'=>'I understand and agree to these <a href="/rules" target="_blank">Official Rules</a> and <a href="/privacy" target="_blank">Privacy Policy</a>.',
                 'help_html'=>true,
                 'label'=>'Agree to rules and privacy policy',
                 'label_attr'=>[
