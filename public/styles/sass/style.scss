@@ -246,6 +246,18 @@ input[type="text"], input[type="email"], input[type="password"] {
     margin: 0 0 0.5rem;
 }
 
+.checkbox_row {
+    display: flex;
+    align-items: flex-start;
+    margin: 0.38rem 0;
+
+    input[type="checkbox"] + .help-text {
+        margin-bottom: 0;
+        font-size: 0.83rem;
+        margin-top: 3px;
+    }
+}
+
 input[type="checkbox"] + .help-text {
     display: inline-block;
     font-size: 0.67rem;
@@ -337,7 +349,6 @@ header.full {
 }
 
 #view_recipe, #enter_recipe, #page_rules {
-    
 
     #footer {
         background-color: $btn_color;

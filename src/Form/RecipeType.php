@@ -112,7 +112,10 @@ class RecipeType extends AbstractType
                     
                 ],
                 'mapped'=>false,
-                'required'=>true
+                'required'=>true,
+                'row_attr'=>[
+                    'class'=>'checkbox_row'
+                ]
             ])
             ->add('entryOptIn', CheckboxType::class, [
                 'help'=>'<b>Yes!</b> I\'d like to receive emails from Steak-umm.',
@@ -124,7 +127,10 @@ class RecipeType extends AbstractType
                 'attr'=>[
 
                 ],
-                'required'=>false
+                'required'=>false,
+                'row_attr'=>[
+                    'class'=>'checkbox_row'
+                ]
             ])
             ->add('voterAcceptRules', CheckboxType::class, [
                 'help'=>'I understand and agree to these <a href="/rules" target="_blank">Official Rules</a> and <a href="/privacy" target="_blank">Privacy Policy</a>.',
@@ -137,7 +143,10 @@ class RecipeType extends AbstractType
                     
                 ],
                 'mapped'=>false,
-                'required'=>true
+                'required'=>true,
+                'row_attr'=>[
+                    'class'=>'checkbox_row'
+                ]
             ])
             ->add('submit', SubmitType::class, [
                 'label'=>'Submit'

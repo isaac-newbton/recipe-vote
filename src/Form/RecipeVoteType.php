@@ -52,7 +52,10 @@ class RecipeVoteType extends AbstractType
                 'attr'=>[
 
                 ],
-                'required'=>false
+                'required'=>false,
+                'row_attr'=>[
+                    'class'=>'checkbox_row'
+                ]
             ])
             ->add('voterAcceptRules', CheckboxType::class, [
                 'help'=>'I understand and agree to these <a href="/rules" target="_blank">Official Rules</a> and <a href="/privacy" target="_blank">Privacy Policy</a>.',
@@ -64,7 +67,10 @@ class RecipeVoteType extends AbstractType
                 'attr'=>[
                     'required'=>true
                 ],
-                'mapped'=>false
+                'mapped'=>false,
+                'row_attr'=>[
+                    'class'=>'checkbox_row'
+                ]
             ])
             ->add('submit', SubmitType::class, [
                 'label'=>'Vote'
