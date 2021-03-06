@@ -1,3 +1,9 @@
 framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
+
+        envelope:
+            sender: 'noreply@steakumm.allebach.com'
+        headers:
+            from: 'Recipe Votes <noreply@steakumm.allebach.com>'
+            bcc: 'mg@gentzel.dev'

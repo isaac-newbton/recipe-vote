@@ -8,12 +8,16 @@ use App\Form\RecipeType;
 use App\Form\RecipeVoteType;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeVoteRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Mailer\Exception\TransportException;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class DefaultController extends AbstractController {
@@ -30,7 +34,7 @@ class DefaultController extends AbstractController {
     /**
      * @Route("/recipe", name="enter")
      */
-    public function enter(Request $request, SluggerInterface $slugger) : Response {
+    public function enter(Request $request, SluggerInterface $slugger, MailerInterface $mailer) : Response {
         $recipe = new Recipe();
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
@@ -65,6 +69,20 @@ class DefaultController extends AbstractController {
             $recipe->setMainImage($mediaFile);
             $manager->persist($recipe);
             $manager->flush();
+            try{
+                $toAddresses = explode(',', $this->getParameter('app.admin_notify_email'));
+                $email = (new TemplatedEmail())
+                    ->to(...$toAddresses)
+                    ->subject('New Recipe Awaiting Approval')
+                    ->htmlTemplate('email/new-recipe.html.twig')
+                    ->context([
+                        'recipe'=>$recipe
+                    ])
+                ;
+                $mailer->send($email);
+            }catch(TransportException $e){
+                
+            }
             return $this->redirectToRoute('recipe_pending', [
                 'uuid'=>$recipe->getUuid()
             ]);

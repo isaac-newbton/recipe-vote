@@ -1,0 +1,6 @@
+<h1>New recipe awaiting approval</h1>
+<p>A new recipe has been submitted and is awaiting approval at the following URL:</p>
+<ul>
+    <li><a href="{{ url('admin_preview_recipe', {uuid: recipe.uuid}) }}">{{ url('admin_preview_recipe', {uuid: recipe.uuid}) }}</a></li>
+    <li>Recipe: "{{ recipe.title }}"</li>
+</ul>
