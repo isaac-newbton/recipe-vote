@@ -524,3 +524,24 @@ header.full {
         margin-bottom: -$content_area_padding;
     }
 }
+
+#voted_thankyou, #vote_rejected {
+    max-width: $content_width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media(min-width: $large_width){
+        padding: $content_area_padding;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.125);
+    }
+}
+
+@media(min-width: $large_width){
+    #voted_thankyou {
+        background-color: #dfd;
+    }
+
+    #vote_rejected {
+        background-color: #fdd;
+    }
+}
