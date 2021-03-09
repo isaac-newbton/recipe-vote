@@ -1,0 +1,11 @@
+<h1>Your recipe has been denied.</h1>
+<p>The recipe you submitted for Cheesesteak Day, "<b>{{ recipe.title }}</b>" has been denied and cannot receive votes in its current form. Please re-submit your recipe and make sure you include the following information:</p>
+<ul>
+    <li>A valid picture of the recipe</li>
+    <li>A relevant title that does not contain profanity</li>
+    <li>A description that does not contain profanity</li>
+</ul>
+<p>You can submit your recipe again at the following link: <a href="{{ url('enter') }}">{{ url('enter') }}</a>.</p>
+<h2>Your previous submission</h2>
+<b>Title:</b> <i>{{ recipe.title }}</i><br/>
+<b>Description:</b>{{ recipe.description|raw }}

@@ -1,0 +1,6 @@
+<h1>Your recipe is approved!</h1>
+<p>The recipe you submitted for Cheesesteak Day, "<b>{{ recipe.title }}</b>" is now available for public voting at the following link:</p>
+<ul>
+    <li><a href="{{ url('recipe_view', {uuid: recipe.uuid}) }}">{{ url('recipe_view', {uuid: recipe.uuid}) }}</a></li>
+</ul>
+<p>Make sure to share your link with as many people as possible! Everyone can vote once per day.</p>
