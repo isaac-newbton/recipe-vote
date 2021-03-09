@@ -3,9 +3,13 @@
 {% block body %}
     <main id="enter_recipe">
         <header class="full">
-            <img src="/images/header.png" alt="Cheesesteak Day banner">
-            <img src="/images/plate.png" alt="Steak-umm boxes and a cheesesteak">
+            <img src="/images/header.png" alt="Cheesesteak Day banner" class="mobile-only">
+            <img src="/images/banner-lg.png" alt="Cheesesteak Day banner" class="desktop-only">
         </header>
+        <div id="main_image_container">
+            <img src="/images/plate.png" alt="Steak-umm boxes and a cheesesteak" class="mobile-only">
+            <img src="/images/plate-wide.png" alt="Steak-umm boxes and a cheesesteak" class="desktop-only">
+        </div>
         {{ form(form) }}
         <footer id="footer">
             <img src="/images/logo.png" alt="Steak-umm logo" class="logo">

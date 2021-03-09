@@ -3,95 +3,105 @@
 {% block body %}
     <main id="page_home">
         <header class="full">
-            <img src="/images/header.png" alt="Cheesesteak Day banner">
-            <img src="/images/plate.png" alt="Steak-umm boxes and a cheesesteak">
+            <img src="/images/header.png" alt="Cheesesteak Day banner" class="mobile-only">
+            <img src="/images/banner-lg.png" alt="Cheesesteak Day banner" class="desktop-only">
         </header>
-        <h1>ATTN: BEEFLINGS</h1>
-        <p>This Cheesesteak Day, we're upping the steaks by giving away OVER A YEAR'S WORTH OF BEEF to a few lucky beeflings. All we ask is for the most sumptuous and sensual cheesesteak experience in history. Give us your best cheesesteak recipe. Classic, Angus, or Chicken - your call. Dazzle us. Show us your fanciest roll. Give us your stinkiest cheese. Declassify your proprietary spice blend. Do whatever it takes to put together the most amazing cheesesteak recipe of our time.</p>
-        <p><em>The contest kicks off on 3/8/21, and runs until 3/24/21 (Cheesesteak Day, duh). Winners will be announced 3/26/21.</em></p>
-        <ul id="contest_steps">
-            <li>
-                <h2>Step 1</h2>
-                <p>Submit your recipe along with a photo of your cheesesteak.</p>
-            </li>
-            <li>
-                <h2>Step 2</h2>
-                <p>After submitting, you'll be given a custom link with your recipe details so when you share with someone they can vote for you.</p>
-            </li>
-            <li>
-                <h2>Step 3</h2>
-                <p>You gotta tweet the beef, gram your meat, and share your recipe link with the masses. Tag @steak_umm in your posts and tell your squad to vote for your legendary cheesesteak.</p>
-            </li>
-            <li>
-                <h2>Step 4</h2>
-                <p>Make meat history.</p>
-            </li>
-        </ul>
-        <section id="prizes">
-            <ul>
-                <li>
-                    <h2>First Prize</h2>
-                    <p>1 Year of Steak-umm and<br/>
-                    MISCELLANEOUS MEAT SWAG</p>
-                </li>
-                <li>
-                    <h2>Second Prize</h2>
-                    <p>6 months of Steak-umm and<br/>
-                    MISCELLANEOUS MEAT SWAG</p>
-                </li>
-                <li>
-                    <h2>Third Prize</h2>
-                    <p>3 months of Steak-umm and<br/>
-                    MISCELLANEOUS MEAT SWAG</p>
-                </li>
-            </ul>
-        </section>
-        <section id="buttons_rules">
-            <a href="{{ path('enter') }}" class="button alt">Click to submit your recipe</a>
-            <small><a href="{{ path('rules') }}">Official Rules</a> and <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a></small>
-            <footer id="footer">
-                <img src="/images/logo.png" alt="Steak-umm logo" class="logo">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.steakumm.com/contact/" target="_blank">Contact</a>
-                        </li>
-                        <li>
-                            <a href="https://www.steakumm.com/about/#community" target="_blank">Supported Charities</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="social">
-                    <div>
-                        <a href="https://twitter.com/steak_umm" target="_blank">
-                            <img src="/images/tw.png" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.tiktok.com/@steakumm" target="_blank">
-                            <img src="/images/tt.png" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.instagram.com/steak_umm/" target="_blank">
-                            <img src="/images/ig.png" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.youtube.com/channel/UCVWVJqzXGi5BzQ5xXn5Ln-g" target="_blank">
-                            <img src="/images/yt.png" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.facebook.com/SteakUmmMeats/" target="_blank">
-                            <img src="/images/fb.png" alt="">
-                        </a>
-                    </div>
+        <div id="main_image_container">
+            <img src="/images/plate.png" alt="Steak-umm boxes and a cheesesteak" class="mobile-only">
+            <img src="/images/plate-wide.png" alt="Steak-umm boxes and a cheesesteak" class="desktop-only">
+        </div>
+        <div id="home_content_wrapper">
+            <div id="home_content">
+                <div id="home_content_body">
+                    <h1>ATTN: BEEFLINGS</h1>
+                    <p>This Cheesesteak Day, we're upping the steaks by giving away OVER A YEAR'S WORTH OF BEEF to a few lucky beeflings. All we ask is for the most sumptuous and sensual cheesesteak experience in history. Give us your best cheesesteak recipe. Classic, Angus, or Chicken - your call. Dazzle us. Show us your fanciest roll. Give us your stinkiest cheese. Declassify your proprietary spice blend. Do whatever it takes to put together the most amazing cheesesteak recipe of our time.</p>
+                    <p><em>The contest kicks off on 3/8/21, and runs until 3/24/21 (Cheesesteak Day, duh). Winners will be announced 3/26/21.</em></p>
                 </div>
-            </footer>
-        </section>
+                <ul id="contest_steps">
+                    <li>
+                        <h2>Step 1</h2>
+                        <p>Submit your recipe along with a photo of your cheesesteak.</p>
+                    </li>
+                    <li>
+                        <h2>Step 2</h2>
+                        <p>After submitting, you'll be given a custom link with your recipe details so when you share with someone they can vote for you.</p>
+                    </li>
+                    <li>
+                        <h2>Step 3</h2>
+                        <p>You gotta tweet the beef, gram your meat, and share your recipe link with the masses. Tag @steak_umm in your posts and tell your squad to vote for your legendary cheesesteak.</p>
+                    </li>
+                    <li>
+                        <h2>Step 4</h2>
+                        <p>Make meat history.</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="prizes">
+                <ul>
+                    <li>
+                        <h2>First Prize</h2>
+                        <p>1 Year of Steak-umm and<br/>
+                        MISCELLANEOUS MEAT SWAG</p>
+                    </li>
+                    <li>
+                        <h2>Second Prize</h2>
+                        <p>6 months of Steak-umm and<br/>
+                        MISCELLANEOUS MEAT SWAG</p>
+                    </li>
+                    <li>
+                        <h2>Third Prize</h2>
+                        <p>3 months of Steak-umm and<br/>
+                        MISCELLANEOUS MEAT SWAG</p>
+                    </li>
+                </ul>
+                <section id="buttons_rules">
+                    <a href="{{ path('enter') }}" class="button alt">Click to submit your recipe</a>
+                    <small><a href="{{ path('rules') }}">Official Rules</a> and <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a></small>
+                </section>
+            </div>
+        </div>
+        <footer id="footer">
+            <img src="/images/logo.png" alt="Steak-umm logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.steakumm.com/contact/" target="_blank">Contact</a>
+                    </li>
+                    <li>
+                        <a href="https://www.steakumm.com/about/#community" target="_blank">Supported Charities</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social">
+                <div>
+                    <a href="https://twitter.com/steak_umm" target="_blank">
+                        <img src="/images/tw.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.tiktok.com/@steakumm" target="_blank">
+                        <img src="/images/tt.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/steak_umm/" target="_blank">
+                        <img src="/images/ig.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/channel/UCVWVJqzXGi5BzQ5xXn5Ln-g" target="_blank">
+                        <img src="/images/yt.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/SteakUmmMeats/" target="_blank">
+                        <img src="/images/fb.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
     </main>
 {% endblock %}

@@ -3,7 +3,8 @@
 {% block body %}
     <main id="view_recipe">
         <header class="full">
-            <img src="/images/header.png" alt="Cheesesteak Day banner">
+            <img src="/images/header.png" alt="Cheesesteak Day banner" class="mobile-only">
+            <img src="/images/banner-lg.png" alt="Cheesesteak Day banner" class="desktop-only">
         </header>
         {% if voted %}
             {% if allowed %}
@@ -19,12 +20,12 @@
             {% endif %}
         {% endif %}
         {% if recipe.published %}
-            <article>
+            <article id="recipe">
                 <header>
                     <img src="/{{ recipe.mainImage.path|replace({'\\': "/"}) }}" alt="{{ recipe.mainImage.altText }}">
-                    <h1>{{ recipe.title }}</h1>
                 </header>
                 <section id="recipe_description">
+                    <h1>{{ recipe.title }}</h1>
                     {{ recipe.description|raw }}
                 </section>
             </article>

@@ -9,12 +9,12 @@
                 <a href="{{ path('admin_deny_recipe', {uuid: recipe.uuid}) }}" class="button">Deny</a>
             </div>
         {% endif %}
-        <article>
+        <article id="recipe">
             <header>
                 <img src="/{{ recipe.mainImage.path|replace({'\\': "/"}) }}" alt="{{ recipe.mainImage.altText }}">
-                <h1>{{ recipe.title }}</h1>
             </header>
             <section id="recipe_description">
+                <h1>{{ recipe.title }}</h1>
                 {{ recipe.description|raw }}
             </section>
         </article>

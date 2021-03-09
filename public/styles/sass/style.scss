@@ -3,12 +3,14 @@ $btn_color_alt: black;
 $heading_color: black;
 $heading_color_alt: #310504;
 $link_color: #fd0d08;
+$heading_color_alt_bright: #cd1311;
 $content_width: 480px;
 $content_area_background: white;
 $content_area_padding: 2.2rem;
 $viewport_background: #f3f3f3;
 $breakpoint: 800px;
 $large_width: 1024px;
+$max_content_width_large: 1320px;
 
 html {
     font-size: 100%;
@@ -21,6 +23,27 @@ body {
     background-color: $viewport_background;
 }
 
+.desktop-only{
+    display: none;
+}
+
+@media(min-width: $large_width){
+    .mobile-only{
+        display: none;
+    }
+
+    .desktop-only{
+        display: initial;
+    }
+}
+
+form {
+    width: 100%;
+    max-width: $content_width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 main {
     width: 100%;
     max-width: $content_width;
@@ -30,9 +53,17 @@ main {
     padding-left: $content_area_padding;
     padding-right: $content_area_padding;
     box-sizing: border-box;
-    padding-bottom: $content_area_padding;
+    padding-bottom: 0;
     min-height: 100vh;
     background-color: white;
+
+    @media(min-width: $large_width){
+        max-width: $max_content_width_large;
+        background-image: url(/images/bg-large-top.jpg);
+        background-position: center top;
+        background-repeat: no-repeat;
+        padding-top: 60px;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,16 +102,48 @@ ul {
     list-style: none;
 }
 
-#contest_steps{
+#home_content_wrapper{
+    display: flex;
+    flex-flow: column nowrap;
 
-    h2{
-        color: $heading_color_alt;
-        margin: 0;
-        text-transform: unset;
+    #home_content {
+        padding: $content_area_padding 0;
     }
 
-    p{
-        margin-top: 0.13em;
+    #contest_steps{
+    
+        h2{
+            color: $heading_color_alt;
+            margin: 0;
+            text-transform: unset;
+        }
+    
+        p{
+            margin-top: 0.13em;
+        }
+    }
+
+    @media(min-width: $large_width){
+        margin-left: -$content_area_padding;
+        margin-right: -$content_area_padding;
+
+        #home_content {
+            display: flex;
+            flex-flow: row nowrap;
+
+            > * {
+                flex: 1 1 50%;
+                padding: $content_area_padding;
+            }
+
+            #contest_steps {
+
+                h2 {
+                    color: $heading_color_alt_bright;
+                    font-size: 1.4rem;
+                }
+            }
+        }
     }
 }
 
@@ -101,6 +164,67 @@ ul {
         font-weight: bold;
         font-size: 1.15rem;
         margin-bottom: 2rem;
+    }
+
+    @media(min-width: $large_width){
+        background-color: unset;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: $large_width - 60px;
+        padding: $content_area_padding;
+        border: 2px solid $heading_color_alt_bright;
+        box-sizing: border-box;
+        margin-bottom: 9rem;
+        position: relative;
+
+        > ul {
+            margin: 0;
+            display: flex;
+            flex-flow: row nowrap;
+
+            > li {
+                flex: 1 1 auto;
+            }
+        }
+    }
+}
+
+#buttons_rules{
+    background-color: $btn_color;
+    text-align: center;
+    margin-left: -$content_area_padding;
+    margin-right: -$content_area_padding;
+    padding: 0 $content_area_padding (2 * $content_area_padding);
+
+    small a, small{
+        color: lightgray;
+        font-weight: bold;
+    }
+
+    footer {
+        margin-left: -$content_area_padding;
+        margin-right: -$content_area_padding;
+        margin-top: $content_area_padding;
+    }
+
+    @media(min-width: $large_width){
+        background-color: unset;
+        padding-bottom: 0;
+        position: absolute;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        left: 0;
+        bottom: -5rem;
+
+        > a {
+            font-size: 2rem;
+        }
+
+        small, small > a {
+            color: #636466;
+        }
     }
 }
 
@@ -148,26 +272,6 @@ a.button, button, submit {
     top: 0;
 }
 
-#buttons_rules{
-    background-color: $btn_color;
-    text-align: center;
-    margin-left: -$content_area_padding;
-    margin-right: -$content_area_padding;
-    margin-bottom: -$content_area_padding;
-    padding: $content_area_padding $content_area_padding 0;
-
-    small a, small{
-        color: lightgray;
-        font-weight: bold;
-    }
-
-    footer {
-        margin-left: -$content_area_padding;
-        margin-right: -$content_area_padding;
-        margin-top: $content_area_padding;
-    }
-}
-
 img {
     display: block;
     width: 100%;
@@ -180,6 +284,15 @@ img {
 
 #page_home {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
+}
+
+#main_image_container {
+    margin-left: -$content_area_padding;
+    margin-right: -$content_area_padding;
+
+    @media(min-width: $large_width){
+        text-align: center;
+    }
 }
 
 #recipe_description {
@@ -214,11 +327,28 @@ img {
             img {
                 border-radius: 20px;
             }
+        }
+
+        h1 {
+            margin-top: $content_area_padding;
+            text-align: center;
+            color: $heading_color_alt;
+        }
+
+        @media(min-width: $large_width){
+            display: flex;
+            flex-flow: row nowrap;
+
+            > * {
+                flex: 1 1 50%;
+            }
 
             h1 {
-                margin-top: $content_area_padding;
-                text-align: center;
-                color: $heading_color_alt;
+                text-align: left;
+            }
+
+            #recipe_description {
+                padding-left: $content_area_padding;
             }
         }
     }
@@ -231,6 +361,15 @@ img {
         font-size: 1.33rem;
         color: $heading_color_alt;
         text-align: center;
+    }
+
+    @media(min-width: $large_width){
+        margin-top: 4rem;
+        padding: $content_area_padding;
+        border: 1px solid #b9b7b5;
+        max-width: $content_width;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -270,6 +409,11 @@ input[type="checkbox"] + .help-text {
 
 submit, button[type="submit"] {
     margin-top: 1rem;
+
+    @media(min-width: $large_width){
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
 }
 
 .label_file {
@@ -294,13 +438,27 @@ input[type="file"]{
 header.full {
     margin-left: -$content_area_padding;
     margin-right: -$content_area_padding;
+
+    @media(min-width: $large_width){
+        text-align: center;
+        padding-bottom: 2 * $content_area_padding;
+    }
 }
 
 #footer {
     background-image: url(/images/footer.png);
-    background-size: 100%;
+    background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
+    margin-left: -$content_area_padding;
+    margin-right: -$content_area_padding;
+    padding-left: $content_area_padding;
+    padding-right: $content_area_padding;
+
+    @media(min-width: $large_width){
+        background-size: unset;
+        background-repeat: repeat;
+    }
 
     .logo {
         position: relative;
@@ -346,6 +504,12 @@ header.full {
                 max-width: 100%;
                 height: auto;
             }
+        }
+
+        @media(min-width: $large_width){
+            max-width: $content_width;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
