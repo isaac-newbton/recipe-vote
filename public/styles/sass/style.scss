@@ -64,6 +64,10 @@ main {
         background-repeat: no-repeat;
         padding-top: 60px;
     }
+
+    &#admin_recipes, &#admin_login{
+        background-image: none;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,13 +115,13 @@ ul {
     }
 
     #contest_steps{
-    
+
         h2{
             color: $heading_color_alt;
             margin: 0;
             text-transform: unset;
         }
-    
+
         p{
             margin-top: 0.13em;
         }
@@ -274,8 +278,7 @@ a.button, button, submit {
 
 img {
     display: block;
-    width: 100%;
-    max-width: fit-content;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 0;

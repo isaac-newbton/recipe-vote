@@ -2,6 +2,10 @@
 
 {% block body %}
     <main id="view_recipe">
+        <header class="full">
+            <img src="/images/header.png" alt="Cheesesteak Day banner" class="mobile-only">
+            <img src="/images/banner-lg.png" alt="Cheesesteak Day banner" class="desktop-only">
+        </header>
         {% if recipe.published is null %}
             <div class="recipe_admin">
                 <p>This recipe is not yet published.</p>
