@@ -448,6 +448,14 @@ header.full {
     }
 }
 
+@media(min-width: $large_width){
+    #page_rules, #page_privacy {
+        header.full {
+            padding-bottom: 220px;
+        }
+    }
+}
+
 #footer {
     background-image: url(/images/footer.png);
     background-size: cover;
