@@ -30,8 +30,8 @@
                                 <small>{{ r.createdDateTime|date('m/d g:i:sA') }}</small>
                             </td>
                             <td>
-                                <a href="{{ path('admin_preview_recipe', {uuid: r.uuid}) }}">Preview (Admin)</a><br/>
-                                <a href="{{ path('recipe_view', {uuid: r.uuid}) }}">View (Public page)</a>
+                                <a class="action_button" href="{{ path('admin_preview_recipe', {uuid: r.uuid}) }}">Preview (Admin)</a>
+                                <a class="action_button" href="{{ path('recipe_view', {uuid: r.uuid}) }}">View (Public page)</a>
                             </td>
                         </tr>
                     {% endfor %}
