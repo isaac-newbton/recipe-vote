@@ -1,5 +1,8 @@
 {% extends "base.html.twig" %}
 
+{% block twtitle %}{{ recipe.title }}{% endblock %}
+{% block twimg %}{{ url('index') }}{{ recipe.mainImage.path|replace({'\\': "/"}) }}{% endblock %}
+
 {% block body %}
     <main id="view_recipe">
         <header class="full">
