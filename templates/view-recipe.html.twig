@@ -46,8 +46,9 @@
                 {% endif %}
             {% else %}
                 <section id="vote_form_section">
-                    <h2>Only one vote per day is accepted.</h2>
-                    {{ form(form) }}
+                    <h2>Voting for this contest has closed.</h2>
+                    <p>Thanks to all who participated! Winners will be notified soon.</p>
+                    {# {{ form(form) }} #}
                 </section>
             {% endif %}
         {% elseif recipe.published is null %}
